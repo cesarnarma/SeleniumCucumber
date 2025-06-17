@@ -1,4 +1,4 @@
-@featurePruebasDemoBlaze2
+@featurePruebasDemoBlaze2 @regresion
 Feature: Prueba Demo Blaze N.2
 
   @prueba2DemoBlaze @DemoBlaze2_1_1

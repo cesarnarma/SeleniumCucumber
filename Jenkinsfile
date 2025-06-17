@@ -2,12 +2,16 @@ pipeline {
     agent any
 
     tools {
-        maven 'Maven_3.9.6'  // Usa el nombre configurado en "Global Tools" de Jenkins
-        jdk 'JDK_21'         // Usa el nombre del JDK configurado en Jenkins
+        maven 'Maven_3.9.6'
+        jdk 'JDK_21'
     }
 
     environment {
         MAVEN_OPTS = "-Dmaven.test.failure.ignore=false"
+    }
+
+    parameters {
+        string(name: 'TAGS', defaultValue: '@regresion', description: 'Cucumber Tags a ejecutar (por ejemplo: @login or @regresion and not @wip)')
     }
 
     stages {
@@ -19,13 +23,12 @@ pipeline {
 
         stage('Compilar y ejecutar pruebas') {
             steps {
-                sh 'mvn clean install'
+                sh "mvn clean test -Dcucumber.filter.tags='${params.TAGS}'"
             }
         }
 
         stage('Publicar Reportes') {
             steps {
-                // Archiva reportes Cucumber y Extent (si los generas en target/)
                 publishHTML(target: [
                     allowMissing: false,
                     alwaysLinkToLastBuild: true,
@@ -40,7 +43,7 @@ pipeline {
 
     post {
         always {
-            junit 'target/surefire-reports/*.xml'  // Solo si generas reportes JUnit
+            junit 'target/surefire-reports/*.xml'
             archiveArtifacts artifacts: 'target/*.html', allowEmptyArchive: true
         }
         failure {
@@ -48,3 +51,4 @@ pipeline {
         }
     }
 }
+

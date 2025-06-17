@@ -11,8 +11,8 @@ import java.io.IOException;
 @CucumberOptions(
         plugin = {"pretty", "html:target/cucumber-report.html"},
         features = "src/test/resources/features",
-        glue = "definitions",
-        tags = "@featurePruebasDemoBlaze"
+        glue = "definitions"
+        //tags = "@featurePruebasDemoBlaze"
         //publish = true
        // plugin = {"json:src/test/resources/cucumber.json","html:src/test/resources/reportes/cucumber_report.html"}
 
