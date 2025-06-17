@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extentreports>
+    <configuration>
+        <!-- report theme --> <!-- standard, dark -->
+        <theme>standard</theme>
+
+        <!-- document encoding -->  <!-- defaults to UTF-8 -->
+        <encoding>UTF-8</encoding>
+
+        <!-- protocol for script and stylesheets -->   <!-- defaults to https -->
+        <protocol>https</protocol>
+
+        <!-- title of the document -->
+        <documentTitle>Curso de Pruebas Autmatizadas - Udemy</documentTitle>
+
+        <!-- report name - displayed at top-nav -->
+        <reportName>Reporte Pruebas Automatizadas</reportName>
+
+        <!-- global date format override -->  <!-- defaults to yyyy-MM-dd -->
+        <dateFormat>dd-MM-yyyy</dateFormat>
+
+        <!-- global time format override -->   <!-- defaults to HH:mm:ss -->
+        <timeFormat>HH:mm:ss</timeFormat>
+
+        <offlineMode>true</offlineMode>
+
+        <css>.badge-primary{background-color: #000}</css>
+
+        <!-- custom javascript -->
+        <scripts>
+            <![CDATA[
+                $(document).ready(function(){
+                });
+            ]]>
+
+
+        </scripts>
+
+
+        <!-- custom styles -->
+        <styles>
+            <![CDATA[
+      ]]>
+            <style>
+                .side-nav-menu{background-color: #000; color: #fff}
+                .test-list-item{background-color: #e7e7e7; border-bottom: 1px solid #bfbfbf}
+                .title{color: #fff}
+                .table>thead>tr>th{background-color: #000; color: #fff}
+                .header-container{background-color: #000; color: #fff}
+                .badge-success{background-color: #008c00; color: #fff}
+            </style>
+
+        </styles>
+    </configuration>
+</extentreports>

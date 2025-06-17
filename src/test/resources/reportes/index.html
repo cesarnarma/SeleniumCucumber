@@ -1,0 +1,2733 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Curso de Pruebas Autmatizadas - Udemy</title>
+        <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+        <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+	    <link href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/spark/css/spark-style.css" rel="stylesheet" />
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<style type="text/css">
+
+            
+      
+            
+                .side-nav-menu{background-color: #000; color: #fff}
+                .test-list-item{background-color: #e7e7e7; border-bottom: 1px solid #bfbfbf}
+                .title{color: #fff}
+                .table>thead>tr>th{background-color: #000; color: #fff}
+                .header-container{background-color: #000; color: #fff}
+                .badge-success{background-color: #008c00; color: #fff}
+            
+
+        
+</style></head>    <script src="https://cdn.rawgit.com/extent-framework/extent-github-cdn/7cc78ce/spark/js/jsontree.js"></script>
+<body class="spa -report standard">
+    <div class="app header-dark side-nav-folded">
+        <div class="layout">
+<div class="header navbar">
+    <div class="header-container">
+        <div class="nav-logo">
+          <a href="index.html">
+            <div class="logo logo-dark" style="background-image: url('https://cdn.rawgit.com/extent-framework/extent-github-cdn/d74480e/commons/img/logo.png')"></div>
+            <div class="logo logo-white" style="background-image: url('https://cdn.rawgit.com/extent-framework/extent-github-cdn/d74480e/commons/img/logo.png')"></div>
+          </a>
+        </div>
+        <ul class="nav-left">
+          <li>
+            <a class="sidenav-fold-toggler" href="javascript:void(0);">
+              <i class="fa fa-bars"></i>
+            </a>
+            <a class="sidenav-expand-toggler" href="javascript:void(0);">
+              <i class="fa fa-bars"></i>
+            </a>
+          </li>
+          <li class="search-box">
+            <a class="search-toggle" href="javascript:void(0);">
+              <i class="search-icon fa fa-search"></i>
+              <i class="search-icon-close fa fa-close"></i>
+            </a>
+          </li>
+          <li class="search-input">
+            <input id="search-features" class="form-control" type="text" placeholder="Type to search...">
+          </li>
+        </ul>
+        <ul class="nav-right">
+          <li class="m-r-10">
+            <a href="#">
+              <span class="badge badge-primary">Reporte Pruebas Automatizadas</span>
+            </a>
+          </li>
+            <li class="m-r-10">
+                <a href="#">
+                    <span class="badge badge-primary">jun 16, 2025 04:39:26 p. m.</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div><div class="side-nav side-nav-folded">
+  <div class="side-nav-inner">
+    <ul class="side-nav-menu scrollable">
+      <li class="nav-item dropdown" onclick="toggleView('test-view')">
+        <a id="nav-test" class="dropdown-toggle" href="index.html">
+          <span class="icon-holder">
+            <i class="fa fa-align-left"></i>
+          </span>
+          <span class="title">Features</span>
+        </a>
+      </li>
+            <li class="nav-item dropdown" onclick="toggleView('tag-view')">
+        <a id="nav-tag" class="dropdown-toggle" href="tag.html">
+          <span class="icon-holder">
+            <i class="fa fa-tag"></i>
+          </span>
+          <span class="title">Tags</span>
+        </a>
+      </li>
+      <li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
+        <a id="nav-dashboard" class="dropdown-toggle" href="dashboard.html">
+          <span class="icon-holder">
+            <i class="fa fa-bar-chart"></i>
+          </span>
+          <span class="title">Dashboard</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>            <div class="page-container">
+                <div class="main-content">
+<div class="test-wrapper row test-view">
+	<div class="test-list">
+		<div class="test-list-tools">
+			<ul class="tools pull-left">
+				<li>
+					<a href="">
+					<span class="font-size-14">Features</span>
+					</a>
+				</li>
+			</ul>
+			<ul class="tools text-right">
+				<li class="user-profile dropdown dropdown-animated scale-left">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+					<i class="fa fa-exclamation-circle"></i>
+					</a>
+					<ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
+						<a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success pull-right"></span></a>
+						
+						
+						
+						
+						
+						<div class="dropdown-divider"></div>
+						<a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
+					</ul>
+				</li>
+				<li class="user-profile dropdown dropdown-animated scale-left">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+					<i class="fa fa-tag"></i>
+					</a>
+					<ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
+						<a class="dropdown-item" href="#">@featureBBDD</a>
+						<a class="dropdown-item" href="#">@test1_BBDD</a>
+						<a class="dropdown-item" href="#">@test2_BBDD</a>
+						<a class="dropdown-item" href="#">@featurePruebasDemoBlaze</a>
+						<a class="dropdown-item" href="#">@prueba1DemoBlaze</a>
+						<a class="dropdown-item" href="#">@DemoBlaze1_1</a>
+						<a class="dropdown-item" href="#">@DemoBlaze1_2</a>
+						<a class="dropdown-item" href="#">@DemoBlaze1_3</a>
+						<a class="dropdown-item" href="#">@prueba1DemoBlaze_2</a>
+						<a class="dropdown-item" href="#">@DemoBlaze2_1</a>
+						<a class="dropdown-item" href="#">@DemoBlaze2_2</a>
+						<a class="dropdown-item" href="#">@DemoBlaze2_3</a>
+						<a class="dropdown-item" href="#">@prueba1DemoBlaze_3</a>
+						<a class="dropdown-item" href="#">@DemoBlaze3_1</a>
+						<a class="dropdown-item" href="#">@prueba1DemoBlaze_4</a>
+						<a class="dropdown-item" href="#">@DemoBlaze4_1</a>
+						<a class="dropdown-item" href="#">@prueba1DemoBlaze_5</a>
+						<a class="dropdown-item" href="#">@DemoBlaze5_1</a>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<div class="test-list-wrapper scrollable">
+			<ul class="test-list-item">
+				<li class="test-item"  status="pass" test-id="1"
+					author=""
+					tag="@featureBBDD"
+					device="">
+					<div class="status-avatar pass-bg">
+						<i class="fa fa-check text-white"></i>
+					</div>
+					<div class="open-test">
+						<div class="test-detail">
+							<p class="name">Pruebas con BBDD</p>
+							<p class="duration text-sm">0h 0m 0s+1ms</p>
+							<span class="datetime">16:39:27 p. m.</span>
+						</div>
+					</div>
+					<div class="test-contents d-none">
+						<div class="detail-head">
+							<div class="p-v-10 d-inline-block">
+								<div class="info">
+									<h5 class="test-status text-pass">Pruebas con BBDD</h5>
+									<span class='badge badge-success'>06.16.2025 16:39:27</span>
+									<span class='badge badge-danger'>06.16.2025 16:39:27</span>
+									<span class='badge badge-default'>0h 0m 0s+1ms</span>
+								</div>
+								<div class="m-t-15">
+			<span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> @featureBBDD</span>
+								</div>
+								<div class="m-t-10 m-l-5">
+									
+								</div>
+							</div>
+						</div>
+<div class="mt-4">
+	<div class="accordion">
+			<div class="card">
+				<div class="card-header" role="tab">
+					<div class="card-title">
+						<div class="node">Validar que para un ID el nombre y apellido materno es correcto</div> 
+						<div class="status-avatar float-right pass-bg">
+						    <i class="fa fa-check text-white"></i>
+						</div>
+					</div>
+				</div>
+				<div class="collapse">
+					<div class="card-body">
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>4:39:27 p. m.</td>
+				<td>
+						realizo la consulta para ID 1
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>4:39:27 p. m.</td>
+				<td>
+						valido que el nombre sea "juan" y el apellido materno es "farias"
+				</td>
+			</tr>
+	</tbody>
+</table>
+					</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-header" role="tab">
+					<div class="card-title">
+						<div class="node">Validar que para un ID el nombre y apellido materno es correcto</div> 
+						<div class="status-avatar float-right pass-bg">
+						    <i class="fa fa-check text-white"></i>
+						</div>
+					</div>
+				</div>
+				<div class="collapse">
+					<div class="card-body">
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>4:39:27 p. m.</td>
+				<td>
+						realizo la consulta para ID 2
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>4:39:27 p. m.</td>
+				<td>
+						valido que el nombre sea "pedro" y el apellido materno es "arce"
+				</td>
+			</tr>
+	</tbody>
+</table>
+					</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-header" role="tab">
+					<div class="card-title">
+						<div class="node">Validar que para un ID el nombre y apellido materno es correcto</div> 
+						<div class="status-avatar float-right pass-bg">
+						    <i class="fa fa-check text-white"></i>
+						</div>
+					</div>
+				</div>
+				<div class="collapse">
+					<div class="card-body">
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>4:39:27 p. m.</td>
+				<td>
+						realizo la consulta para ID 3
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>4:39:27 p. m.</td>
+				<td>
+						valido que el nombre sea "Cesar" y el apellido materno es "Martinez"
+				</td>
+			</tr>
+	</tbody>
+</table>
+					</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-header" role="tab">
+					<div class="card-title">
+						<div class="node">Validar que para los usuarios su tipo es el esperado</div> 
+						<div class="status-avatar float-right pass-bg">
+						    <i class="fa fa-check text-white"></i>
+						</div>
+					</div>
+				</div>
+				<div class="collapse">
+					<div class="card-body">
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>4:39:27 p. m.</td>
+				<td>
+						realizo la consulta para verificar el tipo de usuario para ID 1
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>4:39:27 p. m.</td>
+				<td>
+						valido el tipo de usuario pars el ID es "user"
+				</td>
+			</tr>
+	</tbody>
+</table>
+					</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-header" role="tab">
+					<div class="card-title">
+						<div class="node">Validar que para los usuarios su tipo es el esperado</div> 
+						<div class="status-avatar float-right pass-bg">
+						    <i class="fa fa-check text-white"></i>
+						</div>
+					</div>
+				</div>
+				<div class="collapse">
+					<div class="card-body">
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>4:39:27 p. m.</td>
+				<td>
+						realizo la consulta para verificar el tipo de usuario para ID 2
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>4:39:27 p. m.</td>
+				<td>
+						valido el tipo de usuario pars el ID es "user"
+				</td>
+			</tr>
+	</tbody>
+</table>
+					</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-header" role="tab">
+					<div class="card-title">
+						<div class="node">Validar que para los usuarios su tipo es el esperado</div> 
+						<div class="status-avatar float-right pass-bg">
+						    <i class="fa fa-check text-white"></i>
+						</div>
+					</div>
+				</div>
+				<div class="collapse">
+					<div class="card-body">
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>4:39:27 p. m.</td>
+				<td>
+						realizo la consulta para verificar el tipo de usuario para ID 3
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>4:39:27 p. m.</td>
+				<td>
+						valido el tipo de usuario pars el ID es "Admin"
+				</td>
+			</tr>
+	</tbody>
+</table>
+					</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-header" role="tab">
+					<div class="card-title">
+						<div class="node">Validar que para los usuarios su tipo es el esperado</div> 
+						<div class="status-avatar float-right pass-bg">
+						    <i class="fa fa-check text-white"></i>
+						</div>
+					</div>
+				</div>
+				<div class="collapse">
+					<div class="card-body">
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>4:39:27 p. m.</td>
+				<td>
+						realizo la consulta para verificar el tipo de usuario para ID 4
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>4:39:27 p. m.</td>
+				<td>
+						valido el tipo de usuario pars el ID es "user"
+				</td>
+			</tr>
+	</tbody>
+</table>
+					</div>
+				</div>
+			</div>
+	</div>
+</div>
+					</div>
+				</li>
+				<li class="test-item"  status="pass" test-id="9"
+					author=""
+					tag="@featurePruebasDemoBlaze"
+					device="">
+					<div class="status-avatar pass-bg">
+						<i class="fa fa-check text-white"></i>
+					</div>
+					<div class="open-test">
+						<div class="test-detail">
+							<p class="name">Prueba Demo Blaze N.1</p>
+							<p class="duration text-sm">0h 0m 2s+554ms</p>
+							<span class="datetime">16:39:27 p. m.</span>
+						</div>
+					</div>
+					<div class="test-contents d-none">
+						<div class="detail-head">
+							<div class="p-v-10 d-inline-block">
+								<div class="info">
+									<h5 class="test-status text-pass">Prueba Demo Blaze N.1</h5>
+									<span class='badge badge-success'>06.16.2025 16:39:27</span>
+									<span class='badge badge-danger'>06.16.2025 16:39:29</span>
+									<span class='badge badge-default'>0h 0m 2s+554ms</span>
+								</div>
+								<div class="m-t-15">
+			<span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> @featurePruebasDemoBlaze</span>
+								</div>
+								<div class="m-t-10 m-l-5">
+									
+								</div>
+							</div>
+						</div>
+<div class="mt-4">
+	<div class="accordion">
+			<div class="card">
+				<div class="card-header" role="tab">
+					<div class="card-title">
+						<div class="node">Validar categorias en DemoBlaze - Phones</div> 
+						<div class="status-avatar float-right pass-bg">
+						    <i class="fa fa-check text-white"></i>
+						</div>
+					</div>
+				</div>
+				<div class="collapse">
+					<div class="card-body">
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>4:39:27 p. m.</td>
+				<td>
+						estoy en la web de "https://demoblaze.com/"
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>4:39:27 p. m.</td>
+				<td>
+						Evidencia del paso:
+						<img class='r-img' onerror='this.style.display="none"' data-featherlight='C:\Users\cesar\IdeaProjects\proyecto_automatizacion/src\test\resources\screenshots\Valid_estoy87.png' src='C:\Users\cesar\IdeaProjects\proyecto_automatizacion/src\test\resources\screenshots\Valid_estoy87.png'>
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>4:39:27 p. m.</td>
+				<td>
+						valido que existe la categoria de "Phones"
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>4:39:27 p. m.</td>
+				<td>
+						Evidencia del paso:
+						<img class='r-img' onerror='this.style.display="none"' data-featherlight='C:\Users\cesar\IdeaProjects\proyecto_automatizacion/src\test\resources\screenshots\Valid_valid37.png' src='C:\Users\cesar\IdeaProjects\proyecto_automatizacion/src\test\resources\screenshots\Valid_valid37.png'>
+				</td>
+			</tr>
+	</tbody>
+</table>
+					</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-header" role="tab">
+					<div class="card-title">
+						<div class="node">Validar categorias en DemoBlaze - Laptops</div> 
+						<div class="status-avatar float-right pass-bg">
+						    <i class="fa fa-check text-white"></i>
+						</div>
+					</div>
+				</div>
+				<div class="collapse">
+					<div class="card-body">
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>4:39:27 p. m.</td>
+				<td>
+						estoy en la web de "https://demoblaze.com/"
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>4:39:27 p. m.</td>
+				<td>
+						Evidencia del paso:
+						<img class='r-img' onerror='this.style.display="none"' data-featherlight='C:\Users\cesar\IdeaProjects\proyecto_automatizacion/src\test\resources\screenshots\Valid_estoy57.png' src='C:\Users\cesar\IdeaProjects\proyecto_automatizacion/src\test\resources\screenshots\Valid_estoy57.png'>
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>4:39:27 p. m.</td>
+				<td>
+						valido que existe la categoria de "Laptops"
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>4:39:27 p. m.</td>
+				<td>
+						Evidencia del paso:
+						<img class='r-img' onerror='this.style.display="none"' data-featherlight='C:\Users\cesar\IdeaProjects\proyecto_automatizacion/src\test\resources\screenshots\Valid_valid24.png' src='C:\Users\cesar\IdeaProjects\proyecto_automatizacion/src\test\resources\screenshots\Valid_valid24.png'>
+				</td>
+			</tr>
+	</tbody>
+</table>
+					</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-header" role="tab">
+					<div class="card-title">
+						<div class="node">Validar categorias en DemoBlaze - Monitors</div> 
+						<div class="status-avatar float-right pass-bg">
+						    <i class="fa fa-check text-white"></i>
+						</div>
+					</div>
+				</div>
+				<div class="collapse">
+					<div class="card-body">
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>4:39:27 p. m.</td>
+				<td>
+						estoy en la web de "https://demoblaze.com/"
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>4:39:27 p. m.</td>
+				<td>
+						Evidencia del paso:
+						<img class='r-img' onerror='this.style.display="none"' data-featherlight='C:\Users\cesar\IdeaProjects\proyecto_automatizacion/src\test\resources\screenshots\Valid_estoy11.png' src='C:\Users\cesar\IdeaProjects\proyecto_automatizacion/src\test\resources\screenshots\Valid_estoy11.png'>
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>4:39:27 p. m.</td>
+				<td>
+						valido que existe la categoria de "Monitors"
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>4:39:28 p. m.</td>
+				<td>
+						Evidencia del paso:
+						<img class='r-img' onerror='this.style.display="none"' data-featherlight='C:\Users\cesar\IdeaProjects\proyecto_automatizacion/src\test\resources\screenshots\Valid_valid58.png' src='C:\Users\cesar\IdeaProjects\proyecto_automatizacion/src\test\resources\screenshots\Valid_valid58.png'>
+				</td>
+			</tr>
+	</tbody>
+</table>
+					</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-header" role="tab">
+					<div class="card-title">
+						<div class="node">Validar que la categoria monitor no tiene menos de 2 productos - Monitors</div> 
+						<div class="status-avatar float-right pass-bg">
+						    <i class="fa fa-check text-white"></i>
+						</div>
+					</div>
+				</div>
+				<div class="collapse">
+					<div class="card-body">
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>4:39:28 p. m.</td>
+				<td>
+						estoy en la web de "https://demoblaze.com/"
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>4:39:28 p. m.</td>
+				<td>
+						Evidencia del paso:
+						<img class='r-img' onerror='this.style.display="none"' data-featherlight='C:\Users\cesar\IdeaProjects\proyecto_automatizacion/src\test\resources\screenshots\Valid_estoy56.png' src='C:\Users\cesar\IdeaProjects\proyecto_automatizacion/src\test\resources\screenshots\Valid_estoy56.png'>
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>4:39:28 p. m.</td>
+				<td>
+						ingreso a la categoria "Monitors"
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>4:39:28 p. m.</td>
+				<td>
+						Evidencia del paso:
+						<img class='r-img' onerror='this.style.display="none"' data-featherlight='C:\Users\cesar\IdeaProjects\proyecto_automatizacion/src\test\resources\screenshots\Valid_ingre10.png' src='C:\Users\cesar\IdeaProjects\proyecto_automatizacion/src\test\resources\screenshots\Valid_ingre10.png'>
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>4:39:28 p. m.</td>
+				<td>
+						valido que no existan menos de "2" productos
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>4:39:28 p. m.</td>
+				<td>
+						Evidencia del paso:
+						<img class='r-img' onerror='this.style.display="none"' data-featherlight='C:\Users\cesar\IdeaProjects\proyecto_automatizacion/src\test\resources\screenshots\Valid_valid85.png' src='C:\Users\cesar\IdeaProjects\proyecto_automatizacion/src\test\resources\screenshots\Valid_valid85.png'>
+				</td>
+			</tr>
+	</tbody>
+</table>
+					</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-header" role="tab">
+					<div class="card-title">
+						<div class="node">Validar que la categoria monitor no tiene menos de 2 productos - Laptops</div> 
+						<div class="status-avatar float-right pass-bg">
+						    <i class="fa fa-check text-white"></i>
+						</div>
+					</div>
+				</div>
+				<div class="collapse">
+					<div class="card-body">
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>4:39:28 p. m.</td>
+				<td>
+						estoy en la web de "https://demoblaze.com/"
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>4:39:28 p. m.</td>
+				<td>
+						Evidencia del paso:
+						<img class='r-img' onerror='this.style.display="none"' data-featherlight='C:\Users\cesar\IdeaProjects\proyecto_automatizacion/src\test\resources\screenshots\Valid_estoy17.png' src='C:\Users\cesar\IdeaProjects\proyecto_automatizacion/src\test\resources\screenshots\Valid_estoy17.png'>
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>4:39:28 p. m.</td>
+				<td>
+						ingreso a la categoria "Laptops"
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>4:39:28 p. m.</td>
+				<td>
+						Evidencia del paso:
+						<img class='r-img' onerror='this.style.display="none"' data-featherlight='C:\Users\cesar\IdeaProjects\proyecto_automatizacion/src\test\resources\screenshots\Valid_ingre96.png' src='C:\Users\cesar\IdeaProjects\proyecto_automatizacion/src\test\resources\screenshots\Valid_ingre96.png'>
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>4:39:28 p. m.</td>
+				<td>
+						valido que no existan menos de "2" productos
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>4:39:28 p. m.</td>
+				<td>
+						Evidencia del paso:
+						<img class='r-img' onerror='this.style.display="none"' data-featherlight='C:\Users\cesar\IdeaProjects\proyecto_automatizacion/src\test\resources\screenshots\Valid_valid12.png' src='C:\Users\cesar\IdeaProjects\proyecto_automatizacion/src\test\resources\screenshots\Valid_valid12.png'>
+				</td>
+			</tr>
+	</tbody>
+</table>
+					</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-header" role="tab">
+					<div class="card-title">
+						<div class="node">Validar que la categoria monitor no tiene menos de 2 productos - Phones</div> 
+						<div class="status-avatar float-right pass-bg">
+						    <i class="fa fa-check text-white"></i>
+						</div>
+					</div>
+				</div>
+				<div class="collapse">
+					<div class="card-body">
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>4:39:28 p. m.</td>
+				<td>
+						estoy en la web de "https://demoblaze.com/"
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>4:39:28 p. m.</td>
+				<td>
+						Evidencia del paso:
+						<img class='r-img' onerror='this.style.display="none"' data-featherlight='C:\Users\cesar\IdeaProjects\proyecto_automatizacion/src\test\resources\screenshots\Valid_estoy96.png' src='C:\Users\cesar\IdeaProjects\proyecto_automatizacion/src\test\resources\screenshots\Valid_estoy96.png'>
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>4:39:28 p. m.</td>
+				<td>
+						ingreso a la categoria "Phones"
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>4:39:28 p. m.</td>
+				<td>
+						Evidencia del paso:
+						<img class='r-img' onerror='this.style.display="none"' data-featherlight='C:\Users\cesar\IdeaProjects\proyecto_automatizacion/src\test\resources\screenshots\Valid_ingre45.png' src='C:\Users\cesar\IdeaProjects\proyecto_automatizacion/src\test\resources\screenshots\Valid_ingre45.png'>
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>4:39:28 p. m.</td>
+				<td>
+						valido que no existan menos de "2" productos
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>4:39:28 p. m.</td>
+				<td>
+						Evidencia del paso:
+						<img class='r-img' onerror='this.style.display="none"' data-featherlight='C:\Users\cesar\IdeaProjects\proyecto_automatizacion/src\test\resources\screenshots\Valid_valid25.png' src='C:\Users\cesar\IdeaProjects\proyecto_automatizacion/src\test\resources\screenshots\Valid_valid25.png'>
+				</td>
+			</tr>
+	</tbody>
+</table>
+					</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-header" role="tab">
+					<div class="card-title">
+						<div class="node">Validar que las categoria no tengan mas de 9 productos</div> 
+						<div class="status-avatar float-right pass-bg">
+						    <i class="fa fa-check text-white"></i>
+						</div>
+					</div>
+				</div>
+				<div class="collapse">
+					<div class="card-body">
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>4:39:28 p. m.</td>
+				<td>
+						estoy en la web de "https://demoblaze.com/"
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>4:39:29 p. m.</td>
+				<td>
+						Evidencia del paso:
+						<img class='r-img' onerror='this.style.display="none"' data-featherlight='C:\Users\cesar\IdeaProjects\proyecto_automatizacion/src\test\resources\screenshots\Valid_estoy97.png' src='C:\Users\cesar\IdeaProjects\proyecto_automatizacion/src\test\resources\screenshots\Valid_estoy97.png'>
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>4:39:29 p. m.</td>
+				<td>
+						ingreso a la categoria "Laptops"
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>4:39:29 p. m.</td>
+				<td>
+						Evidencia del paso:
+						<img class='r-img' onerror='this.style.display="none"' data-featherlight='C:\Users\cesar\IdeaProjects\proyecto_automatizacion/src\test\resources\screenshots\Valid_ingre82.png' src='C:\Users\cesar\IdeaProjects\proyecto_automatizacion/src\test\resources\screenshots\Valid_ingre82.png'>
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>4:39:29 p. m.</td>
+				<td>
+						valido que no existan mas de "9" productos
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>4:39:29 p. m.</td>
+				<td>
+						Evidencia del paso:
+						<img class='r-img' onerror='this.style.display="none"' data-featherlight='C:\Users\cesar\IdeaProjects\proyecto_automatizacion/src\test\resources\screenshots\Valid_valid4.png' src='C:\Users\cesar\IdeaProjects\proyecto_automatizacion/src\test\resources\screenshots\Valid_valid4.png'>
+				</td>
+			</tr>
+	</tbody>
+</table>
+					</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-header" role="tab">
+					<div class="card-title">
+						<div class="node">Validar titulo de la pestaña</div> 
+						<div class="status-avatar float-right pass-bg">
+						    <i class="fa fa-check text-white"></i>
+						</div>
+					</div>
+				</div>
+				<div class="collapse">
+					<div class="card-body">
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>4:39:29 p. m.</td>
+				<td>
+						estoy en la web de "https://demoblaze.com/"
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>4:39:29 p. m.</td>
+				<td>
+						Evidencia del paso:
+						<img class='r-img' onerror='this.style.display="none"' data-featherlight='C:\Users\cesar\IdeaProjects\proyecto_automatizacion/src\test\resources\screenshots\Valid_estoy32.png' src='C:\Users\cesar\IdeaProjects\proyecto_automatizacion/src\test\resources\screenshots\Valid_estoy32.png'>
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>4:39:29 p. m.</td>
+				<td>
+						valido que el nombre de la pestaña es "STORE"
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>4:39:29 p. m.</td>
+				<td>
+						Evidencia del paso:
+						<img class='r-img' onerror='this.style.display="none"' data-featherlight='C:\Users\cesar\IdeaProjects\proyecto_automatizacion/src\test\resources\screenshots\Valid_valid36.png' src='C:\Users\cesar\IdeaProjects\proyecto_automatizacion/src\test\resources\screenshots\Valid_valid36.png'>
+				</td>
+			</tr>
+	</tbody>
+</table>
+					</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-header" role="tab">
+					<div class="card-title">
+						<div class="node">Validar que al ingresar a un producto su ficha es la correcta</div> 
+						<div class="status-avatar float-right pass-bg">
+						    <i class="fa fa-check text-white"></i>
+						</div>
+					</div>
+				</div>
+				<div class="collapse">
+					<div class="card-body">
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>4:39:29 p. m.</td>
+				<td>
+						estoy en la web de "https://demoblaze.com/"
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>4:39:29 p. m.</td>
+				<td>
+						Evidencia del paso:
+						<img class='r-img' onerror='this.style.display="none"' data-featherlight='C:\Users\cesar\IdeaProjects\proyecto_automatizacion/src\test\resources\screenshots\Valid_estoy94.png' src='C:\Users\cesar\IdeaProjects\proyecto_automatizacion/src\test\resources\screenshots\Valid_estoy94.png'>
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>4:39:29 p. m.</td>
+				<td>
+						realizo click sobre el producto "Iphone 6 32gb"
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>4:39:29 p. m.</td>
+				<td>
+						Evidencia del paso:
+						<img class='r-img' onerror='this.style.display="none"' data-featherlight='C:\Users\cesar\IdeaProjects\proyecto_automatizacion/src\test\resources\screenshots\Valid_reali9.png' src='C:\Users\cesar\IdeaProjects\proyecto_automatizacion/src\test\resources\screenshots\Valid_reali9.png'>
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>4:39:29 p. m.</td>
+				<td>
+						valido que la ficha corresponde a "Iphone 6 32gb"
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>4:39:29 p. m.</td>
+				<td>
+						Evidencia del paso:
+						<img class='r-img' onerror='this.style.display="none"' data-featherlight='C:\Users\cesar\IdeaProjects\proyecto_automatizacion/src\test\resources\screenshots\Valid_valid99.png' src='C:\Users\cesar\IdeaProjects\proyecto_automatizacion/src\test\resources\screenshots\Valid_valid99.png'>
+				</td>
+			</tr>
+	</tbody>
+</table>
+					</div>
+				</div>
+			</div>
+	</div>
+</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="test-content scrollable">
+		<div class="test-content-tools">
+			<ul>
+				<li>
+					<a class="back-to-test" href="javascript:void(0)">
+					<i class="fa fa-arrow-left"></i>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="test-content-detail">
+			<div class="detail-body"></div>
+		</div>
+	</div>
+</div><div class="test-wrapper row tag-view attributes-view">
+	<div class="test-list">
+		<div class="test-list-tools">
+			<ul class="tools pull-left">
+				<li>
+					<a href="">
+					<span class="font-size-14">Tags</span>
+					</a>
+				</li>
+			</ul>
+			<ul class="tools text-right">
+				<li>
+					<a href="#">
+					<span class="badge badge-primary">18</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="test-list-wrapper scrollable">
+			<ul class="test-list-item">
+				<li class="test-item">
+					<div class="open-test">
+						<div class="test-detail">
+							<p class="name">@featureBBDD</p>
+							<p class="duration text-sm">8 features</p>
+							<span class="datetime">
+							<span class='badge badge-success'>8</span>
+							
+							
+							
+							</span>
+						</div>
+					</div>
+					<div class="test-contents d-none">
+						<div class="info">
+							<h4>@featureBBDD</h4>
+							<span status="pass" class='badge badge-success'>8 passed</span>
+							
+							
+							
+						</div>
+						<table class='table table-sm mt-4'>
+							<thead>
+								<tr>
+									<th class="status-col">Status</th>
+									<th class="timestamp-col">Timestamp</th>
+									<th>TestName</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="tag-test-status" status="pass">
+									<td>
+										<div class='status-avatar pass-bg'>
+											<i class="fa fa-check text-white"></i>
+										</div>
+									</td>
+									<td>16:39:27 p. m.</td>
+									<td class='linked' test-id='1'>
+										Pruebas con BBDD
+									</td>
+								</tr>
+								<tr class="tag-test-status" status="pass">
+									<td>
+										<div class='status-avatar pass-bg'>
+											<i class="fa fa-check text-white"></i>
+										</div>
+									</td>
+									<td>16:39:27 p. m.</td>
+									<td class='linked' test-id='2'>
+										Validar que para un ID el nombre y apellido materno es correcto
+										<div class="">
+											<span class="badge badge-default">Pruebas con BBDD</span>
+										</div>
+									</td>
+								</tr>
+								<tr class="tag-test-status" status="pass">
+									<td>
+										<div class='status-avatar pass-bg'>
+											<i class="fa fa-check text-white"></i>
+										</div>
+									</td>
+									<td>16:39:27 p. m.</td>
+									<td class='linked' test-id='3'>
+										Validar que para un ID el nombre y apellido materno es correcto
+										<div class="">
+											<span class="badge badge-default">Pruebas con BBDD</span>
+										</div>
+									</td>
+								</tr>
+								<tr class="tag-test-status" status="pass">
+									<td>
+										<div class='status-avatar pass-bg'>
+											<i class="fa fa-check text-white"></i>
+										</div>
+									</td>
+									<td>16:39:27 p. m.</td>
+									<td class='linked' test-id='4'>
+										Validar que para un ID el nombre y apellido materno es correcto
+										<div class="">
+											<span class="badge badge-default">Pruebas con BBDD</span>
+										</div>
+									</td>
+								</tr>
+								<tr class="tag-test-status" status="pass">
+									<td>
+										<div class='status-avatar pass-bg'>
+											<i class="fa fa-check text-white"></i>
+										</div>
+									</td>
+									<td>16:39:27 p. m.</td>
+									<td class='linked' test-id='5'>
+										Validar que para los usuarios su tipo es el esperado
+										<div class="">
+											<span class="badge badge-default">Pruebas con BBDD</span>
+										</div>
+									</td>
+								</tr>
+								<tr class="tag-test-status" status="pass">
+									<td>
+										<div class='status-avatar pass-bg'>
+											<i class="fa fa-check text-white"></i>
+										</div>
+									</td>
+									<td>16:39:27 p. m.</td>
+									<td class='linked' test-id='6'>
+										Validar que para los usuarios su tipo es el esperado
+										<div class="">
+											<span class="badge badge-default">Pruebas con BBDD</span>
+										</div>
+									</td>
+								</tr>
+								<tr class="tag-test-status" status="pass">
+									<td>
+										<div class='status-avatar pass-bg'>
+											<i class="fa fa-check text-white"></i>
+										</div>
+									</td>
+									<td>16:39:27 p. m.</td>
+									<td class='linked' test-id='7'>
+										Validar que para los usuarios su tipo es el esperado
+										<div class="">
+											<span class="badge badge-default">Pruebas con BBDD</span>
+										</div>
+									</td>
+								</tr>
+								<tr class="tag-test-status" status="pass">
+									<td>
+										<div class='status-avatar pass-bg'>
+											<i class="fa fa-check text-white"></i>
+										</div>
+									</td>
+									<td>16:39:27 p. m.</td>
+									<td class='linked' test-id='8'>
+										Validar que para los usuarios su tipo es el esperado
+										<div class="">
+											<span class="badge badge-default">Pruebas con BBDD</span>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</li>
+				<li class="test-item">
+					<div class="open-test">
+						<div class="test-detail">
+							<p class="name">@test1_BBDD</p>
+							<p class="duration text-sm">3 features</p>
+							<span class="datetime">
+							<span class='badge badge-success'>3</span>
+							
+							
+							
+							</span>
+						</div>
+					</div>
+					<div class="test-contents d-none">
+						<div class="info">
+							<h4>@test1_BBDD</h4>
+							<span status="pass" class='badge badge-success'>3 passed</span>
+							
+							
+							
+						</div>
+						<table class='table table-sm mt-4'>
+							<thead>
+								<tr>
+									<th class="status-col">Status</th>
+									<th class="timestamp-col">Timestamp</th>
+									<th>TestName</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="tag-test-status" status="pass">
+									<td>
+										<div class='status-avatar pass-bg'>
+											<i class="fa fa-check text-white"></i>
+										</div>
+									</td>
+									<td>16:39:27 p. m.</td>
+									<td class='linked' test-id='2'>
+										Validar que para un ID el nombre y apellido materno es correcto
+										<div class="">
+											<span class="badge badge-default">Pruebas con BBDD</span>
+										</div>
+									</td>
+								</tr>
+								<tr class="tag-test-status" status="pass">
+									<td>
+										<div class='status-avatar pass-bg'>
+											<i class="fa fa-check text-white"></i>
+										</div>
+									</td>
+									<td>16:39:27 p. m.</td>
+									<td class='linked' test-id='3'>
+										Validar que para un ID el nombre y apellido materno es correcto
+										<div class="">
+											<span class="badge badge-default">Pruebas con BBDD</span>
+										</div>
+									</td>
+								</tr>
+								<tr class="tag-test-status" status="pass">
+									<td>
+										<div class='status-avatar pass-bg'>
+											<i class="fa fa-check text-white"></i>
+										</div>
+									</td>
+									<td>16:39:27 p. m.</td>
+									<td class='linked' test-id='4'>
+										Validar que para un ID el nombre y apellido materno es correcto
+										<div class="">
+											<span class="badge badge-default">Pruebas con BBDD</span>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</li>
+				<li class="test-item">
+					<div class="open-test">
+						<div class="test-detail">
+							<p class="name">@test2_BBDD</p>
+							<p class="duration text-sm">4 features</p>
+							<span class="datetime">
+							<span class='badge badge-success'>4</span>
+							
+							
+							
+							</span>
+						</div>
+					</div>
+					<div class="test-contents d-none">
+						<div class="info">
+							<h4>@test2_BBDD</h4>
+							<span status="pass" class='badge badge-success'>4 passed</span>
+							
+							
+							
+						</div>
+						<table class='table table-sm mt-4'>
+							<thead>
+								<tr>
+									<th class="status-col">Status</th>
+									<th class="timestamp-col">Timestamp</th>
+									<th>TestName</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="tag-test-status" status="pass">
+									<td>
+										<div class='status-avatar pass-bg'>
+											<i class="fa fa-check text-white"></i>
+										</div>
+									</td>
+									<td>16:39:27 p. m.</td>
+									<td class='linked' test-id='5'>
+										Validar que para los usuarios su tipo es el esperado
+										<div class="">
+											<span class="badge badge-default">Pruebas con BBDD</span>
+										</div>
+									</td>
+								</tr>
+								<tr class="tag-test-status" status="pass">
+									<td>
+										<div class='status-avatar pass-bg'>
+											<i class="fa fa-check text-white"></i>
+										</div>
+									</td>
+									<td>16:39:27 p. m.</td>
+									<td class='linked' test-id='6'>
+										Validar que para los usuarios su tipo es el esperado
+										<div class="">
+											<span class="badge badge-default">Pruebas con BBDD</span>
+										</div>
+									</td>
+								</tr>
+								<tr class="tag-test-status" status="pass">
+									<td>
+										<div class='status-avatar pass-bg'>
+											<i class="fa fa-check text-white"></i>
+										</div>
+									</td>
+									<td>16:39:27 p. m.</td>
+									<td class='linked' test-id='7'>
+										Validar que para los usuarios su tipo es el esperado
+										<div class="">
+											<span class="badge badge-default">Pruebas con BBDD</span>
+										</div>
+									</td>
+								</tr>
+								<tr class="tag-test-status" status="pass">
+									<td>
+										<div class='status-avatar pass-bg'>
+											<i class="fa fa-check text-white"></i>
+										</div>
+									</td>
+									<td>16:39:27 p. m.</td>
+									<td class='linked' test-id='8'>
+										Validar que para los usuarios su tipo es el esperado
+										<div class="">
+											<span class="badge badge-default">Pruebas con BBDD</span>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</li>
+				<li class="test-item">
+					<div class="open-test">
+						<div class="test-detail">
+							<p class="name">@featurePruebasDemoBlaze</p>
+							<p class="duration text-sm">10 features</p>
+							<span class="datetime">
+							<span class='badge badge-success'>10</span>
+							
+							
+							
+							</span>
+						</div>
+					</div>
+					<div class="test-contents d-none">
+						<div class="info">
+							<h4>@featurePruebasDemoBlaze</h4>
+							<span status="pass" class='badge badge-success'>10 passed</span>
+							
+							
+							
+						</div>
+						<table class='table table-sm mt-4'>
+							<thead>
+								<tr>
+									<th class="status-col">Status</th>
+									<th class="timestamp-col">Timestamp</th>
+									<th>TestName</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="tag-test-status" status="pass">
+									<td>
+										<div class='status-avatar pass-bg'>
+											<i class="fa fa-check text-white"></i>
+										</div>
+									</td>
+									<td>16:39:27 p. m.</td>
+									<td class='linked' test-id='9'>
+										Prueba Demo Blaze N.1
+									</td>
+								</tr>
+								<tr class="tag-test-status" status="pass">
+									<td>
+										<div class='status-avatar pass-bg'>
+											<i class="fa fa-check text-white"></i>
+										</div>
+									</td>
+									<td>16:39:27 p. m.</td>
+									<td class='linked' test-id='10'>
+										Validar categorias en DemoBlaze - Phones
+										<div class="">
+											<span class="badge badge-default">Prueba Demo Blaze N.1</span>
+										</div>
+									</td>
+								</tr>
+								<tr class="tag-test-status" status="pass">
+									<td>
+										<div class='status-avatar pass-bg'>
+											<i class="fa fa-check text-white"></i>
+										</div>
+									</td>
+									<td>16:39:27 p. m.</td>
+									<td class='linked' test-id='11'>
+										Validar categorias en DemoBlaze - Laptops
+										<div class="">
+											<span class="badge badge-default">Prueba Demo Blaze N.1</span>
+										</div>
+									</td>
+								</tr>
+								<tr class="tag-test-status" status="pass">
+									<td>
+										<div class='status-avatar pass-bg'>
+											<i class="fa fa-check text-white"></i>
+										</div>
+									</td>
+									<td>16:39:27 p. m.</td>
+									<td class='linked' test-id='12'>
+										Validar categorias en DemoBlaze - Monitors
+										<div class="">
+											<span class="badge badge-default">Prueba Demo Blaze N.1</span>
+										</div>
+									</td>
+								</tr>
+								<tr class="tag-test-status" status="pass">
+									<td>
+										<div class='status-avatar pass-bg'>
+											<i class="fa fa-check text-white"></i>
+										</div>
+									</td>
+									<td>16:39:28 p. m.</td>
+									<td class='linked' test-id='13'>
+										Validar que la categoria monitor no tiene menos de 2 productos - Monitors
+										<div class="">
+											<span class="badge badge-default">Prueba Demo Blaze N.1</span>
+										</div>
+									</td>
+								</tr>
+								<tr class="tag-test-status" status="pass">
+									<td>
+										<div class='status-avatar pass-bg'>
+											<i class="fa fa-check text-white"></i>
+										</div>
+									</td>
+									<td>16:39:28 p. m.</td>
+									<td class='linked' test-id='14'>
+										Validar que la categoria monitor no tiene menos de 2 productos - Laptops
+										<div class="">
+											<span class="badge badge-default">Prueba Demo Blaze N.1</span>
+										</div>
+									</td>
+								</tr>
+								<tr class="tag-test-status" status="pass">
+									<td>
+										<div class='status-avatar pass-bg'>
+											<i class="fa fa-check text-white"></i>
+										</div>
+									</td>
+									<td>16:39:28 p. m.</td>
+									<td class='linked' test-id='15'>
+										Validar que la categoria monitor no tiene menos de 2 productos - Phones
+										<div class="">
+											<span class="badge badge-default">Prueba Demo Blaze N.1</span>
+										</div>
+									</td>
+								</tr>
+								<tr class="tag-test-status" status="pass">
+									<td>
+										<div class='status-avatar pass-bg'>
+											<i class="fa fa-check text-white"></i>
+										</div>
+									</td>
+									<td>16:39:28 p. m.</td>
+									<td class='linked' test-id='16'>
+										Validar que las categoria no tengan mas de 9 productos
+										<div class="">
+											<span class="badge badge-default">Prueba Demo Blaze N.1</span>
+										</div>
+									</td>
+								</tr>
+								<tr class="tag-test-status" status="pass">
+									<td>
+										<div class='status-avatar pass-bg'>
+											<i class="fa fa-check text-white"></i>
+										</div>
+									</td>
+									<td>16:39:29 p. m.</td>
+									<td class='linked' test-id='17'>
+										Validar titulo de la pestaña
+										<div class="">
+											<span class="badge badge-default">Prueba Demo Blaze N.1</span>
+										</div>
+									</td>
+								</tr>
+								<tr class="tag-test-status" status="pass">
+									<td>
+										<div class='status-avatar pass-bg'>
+											<i class="fa fa-check text-white"></i>
+										</div>
+									</td>
+									<td>16:39:29 p. m.</td>
+									<td class='linked' test-id='18'>
+										Validar que al ingresar a un producto su ficha es la correcta
+										<div class="">
+											<span class="badge badge-default">Prueba Demo Blaze N.1</span>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</li>
+				<li class="test-item">
+					<div class="open-test">
+						<div class="test-detail">
+							<p class="name">@prueba1DemoBlaze</p>
+							<p class="duration text-sm">3 features</p>
+							<span class="datetime">
+							<span class='badge badge-success'>3</span>
+							
+							
+							
+							</span>
+						</div>
+					</div>
+					<div class="test-contents d-none">
+						<div class="info">
+							<h4>@prueba1DemoBlaze</h4>
+							<span status="pass" class='badge badge-success'>3 passed</span>
+							
+							
+							
+						</div>
+						<table class='table table-sm mt-4'>
+							<thead>
+								<tr>
+									<th class="status-col">Status</th>
+									<th class="timestamp-col">Timestamp</th>
+									<th>TestName</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="tag-test-status" status="pass">
+									<td>
+										<div class='status-avatar pass-bg'>
+											<i class="fa fa-check text-white"></i>
+										</div>
+									</td>
+									<td>16:39:27 p. m.</td>
+									<td class='linked' test-id='10'>
+										Validar categorias en DemoBlaze - Phones
+										<div class="">
+											<span class="badge badge-default">Prueba Demo Blaze N.1</span>
+										</div>
+									</td>
+								</tr>
+								<tr class="tag-test-status" status="pass">
+									<td>
+										<div class='status-avatar pass-bg'>
+											<i class="fa fa-check text-white"></i>
+										</div>
+									</td>
+									<td>16:39:27 p. m.</td>
+									<td class='linked' test-id='11'>
+										Validar categorias en DemoBlaze - Laptops
+										<div class="">
+											<span class="badge badge-default">Prueba Demo Blaze N.1</span>
+										</div>
+									</td>
+								</tr>
+								<tr class="tag-test-status" status="pass">
+									<td>
+										<div class='status-avatar pass-bg'>
+											<i class="fa fa-check text-white"></i>
+										</div>
+									</td>
+									<td>16:39:27 p. m.</td>
+									<td class='linked' test-id='12'>
+										Validar categorias en DemoBlaze - Monitors
+										<div class="">
+											<span class="badge badge-default">Prueba Demo Blaze N.1</span>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</li>
+				<li class="test-item">
+					<div class="open-test">
+						<div class="test-detail">
+							<p class="name">@DemoBlaze1_1</p>
+							<p class="duration text-sm">1 features</p>
+							<span class="datetime">
+							<span class='badge badge-success'>1</span>
+							
+							
+							
+							</span>
+						</div>
+					</div>
+					<div class="test-contents d-none">
+						<div class="info">
+							<h4>@DemoBlaze1_1</h4>
+							<span status="pass" class='badge badge-success'>1 passed</span>
+							
+							
+							
+						</div>
+						<table class='table table-sm mt-4'>
+							<thead>
+								<tr>
+									<th class="status-col">Status</th>
+									<th class="timestamp-col">Timestamp</th>
+									<th>TestName</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="tag-test-status" status="pass">
+									<td>
+										<div class='status-avatar pass-bg'>
+											<i class="fa fa-check text-white"></i>
+										</div>
+									</td>
+									<td>16:39:27 p. m.</td>
+									<td class='linked' test-id='10'>
+										Validar categorias en DemoBlaze - Phones
+										<div class="">
+											<span class="badge badge-default">Prueba Demo Blaze N.1</span>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</li>
+				<li class="test-item">
+					<div class="open-test">
+						<div class="test-detail">
+							<p class="name">@DemoBlaze1_2</p>
+							<p class="duration text-sm">1 features</p>
+							<span class="datetime">
+							<span class='badge badge-success'>1</span>
+							
+							
+							
+							</span>
+						</div>
+					</div>
+					<div class="test-contents d-none">
+						<div class="info">
+							<h4>@DemoBlaze1_2</h4>
+							<span status="pass" class='badge badge-success'>1 passed</span>
+							
+							
+							
+						</div>
+						<table class='table table-sm mt-4'>
+							<thead>
+								<tr>
+									<th class="status-col">Status</th>
+									<th class="timestamp-col">Timestamp</th>
+									<th>TestName</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="tag-test-status" status="pass">
+									<td>
+										<div class='status-avatar pass-bg'>
+											<i class="fa fa-check text-white"></i>
+										</div>
+									</td>
+									<td>16:39:27 p. m.</td>
+									<td class='linked' test-id='11'>
+										Validar categorias en DemoBlaze - Laptops
+										<div class="">
+											<span class="badge badge-default">Prueba Demo Blaze N.1</span>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</li>
+				<li class="test-item">
+					<div class="open-test">
+						<div class="test-detail">
+							<p class="name">@DemoBlaze1_3</p>
+							<p class="duration text-sm">1 features</p>
+							<span class="datetime">
+							<span class='badge badge-success'>1</span>
+							
+							
+							
+							</span>
+						</div>
+					</div>
+					<div class="test-contents d-none">
+						<div class="info">
+							<h4>@DemoBlaze1_3</h4>
+							<span status="pass" class='badge badge-success'>1 passed</span>
+							
+							
+							
+						</div>
+						<table class='table table-sm mt-4'>
+							<thead>
+								<tr>
+									<th class="status-col">Status</th>
+									<th class="timestamp-col">Timestamp</th>
+									<th>TestName</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="tag-test-status" status="pass">
+									<td>
+										<div class='status-avatar pass-bg'>
+											<i class="fa fa-check text-white"></i>
+										</div>
+									</td>
+									<td>16:39:27 p. m.</td>
+									<td class='linked' test-id='12'>
+										Validar categorias en DemoBlaze - Monitors
+										<div class="">
+											<span class="badge badge-default">Prueba Demo Blaze N.1</span>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</li>
+				<li class="test-item">
+					<div class="open-test">
+						<div class="test-detail">
+							<p class="name">@prueba1DemoBlaze_2</p>
+							<p class="duration text-sm">3 features</p>
+							<span class="datetime">
+							<span class='badge badge-success'>3</span>
+							
+							
+							
+							</span>
+						</div>
+					</div>
+					<div class="test-contents d-none">
+						<div class="info">
+							<h4>@prueba1DemoBlaze_2</h4>
+							<span status="pass" class='badge badge-success'>3 passed</span>
+							
+							
+							
+						</div>
+						<table class='table table-sm mt-4'>
+							<thead>
+								<tr>
+									<th class="status-col">Status</th>
+									<th class="timestamp-col">Timestamp</th>
+									<th>TestName</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="tag-test-status" status="pass">
+									<td>
+										<div class='status-avatar pass-bg'>
+											<i class="fa fa-check text-white"></i>
+										</div>
+									</td>
+									<td>16:39:28 p. m.</td>
+									<td class='linked' test-id='13'>
+										Validar que la categoria monitor no tiene menos de 2 productos - Monitors
+										<div class="">
+											<span class="badge badge-default">Prueba Demo Blaze N.1</span>
+										</div>
+									</td>
+								</tr>
+								<tr class="tag-test-status" status="pass">
+									<td>
+										<div class='status-avatar pass-bg'>
+											<i class="fa fa-check text-white"></i>
+										</div>
+									</td>
+									<td>16:39:28 p. m.</td>
+									<td class='linked' test-id='14'>
+										Validar que la categoria monitor no tiene menos de 2 productos - Laptops
+										<div class="">
+											<span class="badge badge-default">Prueba Demo Blaze N.1</span>
+										</div>
+									</td>
+								</tr>
+								<tr class="tag-test-status" status="pass">
+									<td>
+										<div class='status-avatar pass-bg'>
+											<i class="fa fa-check text-white"></i>
+										</div>
+									</td>
+									<td>16:39:28 p. m.</td>
+									<td class='linked' test-id='15'>
+										Validar que la categoria monitor no tiene menos de 2 productos - Phones
+										<div class="">
+											<span class="badge badge-default">Prueba Demo Blaze N.1</span>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</li>
+				<li class="test-item">
+					<div class="open-test">
+						<div class="test-detail">
+							<p class="name">@DemoBlaze2_1</p>
+							<p class="duration text-sm">1 features</p>
+							<span class="datetime">
+							<span class='badge badge-success'>1</span>
+							
+							
+							
+							</span>
+						</div>
+					</div>
+					<div class="test-contents d-none">
+						<div class="info">
+							<h4>@DemoBlaze2_1</h4>
+							<span status="pass" class='badge badge-success'>1 passed</span>
+							
+							
+							
+						</div>
+						<table class='table table-sm mt-4'>
+							<thead>
+								<tr>
+									<th class="status-col">Status</th>
+									<th class="timestamp-col">Timestamp</th>
+									<th>TestName</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="tag-test-status" status="pass">
+									<td>
+										<div class='status-avatar pass-bg'>
+											<i class="fa fa-check text-white"></i>
+										</div>
+									</td>
+									<td>16:39:28 p. m.</td>
+									<td class='linked' test-id='13'>
+										Validar que la categoria monitor no tiene menos de 2 productos - Monitors
+										<div class="">
+											<span class="badge badge-default">Prueba Demo Blaze N.1</span>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</li>
+				<li class="test-item">
+					<div class="open-test">
+						<div class="test-detail">
+							<p class="name">@DemoBlaze2_2</p>
+							<p class="duration text-sm">1 features</p>
+							<span class="datetime">
+							<span class='badge badge-success'>1</span>
+							
+							
+							
+							</span>
+						</div>
+					</div>
+					<div class="test-contents d-none">
+						<div class="info">
+							<h4>@DemoBlaze2_2</h4>
+							<span status="pass" class='badge badge-success'>1 passed</span>
+							
+							
+							
+						</div>
+						<table class='table table-sm mt-4'>
+							<thead>
+								<tr>
+									<th class="status-col">Status</th>
+									<th class="timestamp-col">Timestamp</th>
+									<th>TestName</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="tag-test-status" status="pass">
+									<td>
+										<div class='status-avatar pass-bg'>
+											<i class="fa fa-check text-white"></i>
+										</div>
+									</td>
+									<td>16:39:28 p. m.</td>
+									<td class='linked' test-id='14'>
+										Validar que la categoria monitor no tiene menos de 2 productos - Laptops
+										<div class="">
+											<span class="badge badge-default">Prueba Demo Blaze N.1</span>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</li>
+				<li class="test-item">
+					<div class="open-test">
+						<div class="test-detail">
+							<p class="name">@DemoBlaze2_3</p>
+							<p class="duration text-sm">1 features</p>
+							<span class="datetime">
+							<span class='badge badge-success'>1</span>
+							
+							
+							
+							</span>
+						</div>
+					</div>
+					<div class="test-contents d-none">
+						<div class="info">
+							<h4>@DemoBlaze2_3</h4>
+							<span status="pass" class='badge badge-success'>1 passed</span>
+							
+							
+							
+						</div>
+						<table class='table table-sm mt-4'>
+							<thead>
+								<tr>
+									<th class="status-col">Status</th>
+									<th class="timestamp-col">Timestamp</th>
+									<th>TestName</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="tag-test-status" status="pass">
+									<td>
+										<div class='status-avatar pass-bg'>
+											<i class="fa fa-check text-white"></i>
+										</div>
+									</td>
+									<td>16:39:28 p. m.</td>
+									<td class='linked' test-id='15'>
+										Validar que la categoria monitor no tiene menos de 2 productos - Phones
+										<div class="">
+											<span class="badge badge-default">Prueba Demo Blaze N.1</span>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</li>
+				<li class="test-item">
+					<div class="open-test">
+						<div class="test-detail">
+							<p class="name">@prueba1DemoBlaze_3</p>
+							<p class="duration text-sm">1 features</p>
+							<span class="datetime">
+							<span class='badge badge-success'>1</span>
+							
+							
+							
+							</span>
+						</div>
+					</div>
+					<div class="test-contents d-none">
+						<div class="info">
+							<h4>@prueba1DemoBlaze_3</h4>
+							<span status="pass" class='badge badge-success'>1 passed</span>
+							
+							
+							
+						</div>
+						<table class='table table-sm mt-4'>
+							<thead>
+								<tr>
+									<th class="status-col">Status</th>
+									<th class="timestamp-col">Timestamp</th>
+									<th>TestName</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="tag-test-status" status="pass">
+									<td>
+										<div class='status-avatar pass-bg'>
+											<i class="fa fa-check text-white"></i>
+										</div>
+									</td>
+									<td>16:39:28 p. m.</td>
+									<td class='linked' test-id='16'>
+										Validar que las categoria no tengan mas de 9 productos
+										<div class="">
+											<span class="badge badge-default">Prueba Demo Blaze N.1</span>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</li>
+				<li class="test-item">
+					<div class="open-test">
+						<div class="test-detail">
+							<p class="name">@DemoBlaze3_1</p>
+							<p class="duration text-sm">1 features</p>
+							<span class="datetime">
+							<span class='badge badge-success'>1</span>
+							
+							
+							
+							</span>
+						</div>
+					</div>
+					<div class="test-contents d-none">
+						<div class="info">
+							<h4>@DemoBlaze3_1</h4>
+							<span status="pass" class='badge badge-success'>1 passed</span>
+							
+							
+							
+						</div>
+						<table class='table table-sm mt-4'>
+							<thead>
+								<tr>
+									<th class="status-col">Status</th>
+									<th class="timestamp-col">Timestamp</th>
+									<th>TestName</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="tag-test-status" status="pass">
+									<td>
+										<div class='status-avatar pass-bg'>
+											<i class="fa fa-check text-white"></i>
+										</div>
+									</td>
+									<td>16:39:28 p. m.</td>
+									<td class='linked' test-id='16'>
+										Validar que las categoria no tengan mas de 9 productos
+										<div class="">
+											<span class="badge badge-default">Prueba Demo Blaze N.1</span>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</li>
+				<li class="test-item">
+					<div class="open-test">
+						<div class="test-detail">
+							<p class="name">@prueba1DemoBlaze_4</p>
+							<p class="duration text-sm">1 features</p>
+							<span class="datetime">
+							<span class='badge badge-success'>1</span>
+							
+							
+							
+							</span>
+						</div>
+					</div>
+					<div class="test-contents d-none">
+						<div class="info">
+							<h4>@prueba1DemoBlaze_4</h4>
+							<span status="pass" class='badge badge-success'>1 passed</span>
+							
+							
+							
+						</div>
+						<table class='table table-sm mt-4'>
+							<thead>
+								<tr>
+									<th class="status-col">Status</th>
+									<th class="timestamp-col">Timestamp</th>
+									<th>TestName</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="tag-test-status" status="pass">
+									<td>
+										<div class='status-avatar pass-bg'>
+											<i class="fa fa-check text-white"></i>
+										</div>
+									</td>
+									<td>16:39:29 p. m.</td>
+									<td class='linked' test-id='17'>
+										Validar titulo de la pestaña
+										<div class="">
+											<span class="badge badge-default">Prueba Demo Blaze N.1</span>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</li>
+				<li class="test-item">
+					<div class="open-test">
+						<div class="test-detail">
+							<p class="name">@DemoBlaze4_1</p>
+							<p class="duration text-sm">1 features</p>
+							<span class="datetime">
+							<span class='badge badge-success'>1</span>
+							
+							
+							
+							</span>
+						</div>
+					</div>
+					<div class="test-contents d-none">
+						<div class="info">
+							<h4>@DemoBlaze4_1</h4>
+							<span status="pass" class='badge badge-success'>1 passed</span>
+							
+							
+							
+						</div>
+						<table class='table table-sm mt-4'>
+							<thead>
+								<tr>
+									<th class="status-col">Status</th>
+									<th class="timestamp-col">Timestamp</th>
+									<th>TestName</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="tag-test-status" status="pass">
+									<td>
+										<div class='status-avatar pass-bg'>
+											<i class="fa fa-check text-white"></i>
+										</div>
+									</td>
+									<td>16:39:29 p. m.</td>
+									<td class='linked' test-id='17'>
+										Validar titulo de la pestaña
+										<div class="">
+											<span class="badge badge-default">Prueba Demo Blaze N.1</span>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</li>
+				<li class="test-item">
+					<div class="open-test">
+						<div class="test-detail">
+							<p class="name">@prueba1DemoBlaze_5</p>
+							<p class="duration text-sm">1 features</p>
+							<span class="datetime">
+							<span class='badge badge-success'>1</span>
+							
+							
+							
+							</span>
+						</div>
+					</div>
+					<div class="test-contents d-none">
+						<div class="info">
+							<h4>@prueba1DemoBlaze_5</h4>
+							<span status="pass" class='badge badge-success'>1 passed</span>
+							
+							
+							
+						</div>
+						<table class='table table-sm mt-4'>
+							<thead>
+								<tr>
+									<th class="status-col">Status</th>
+									<th class="timestamp-col">Timestamp</th>
+									<th>TestName</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="tag-test-status" status="pass">
+									<td>
+										<div class='status-avatar pass-bg'>
+											<i class="fa fa-check text-white"></i>
+										</div>
+									</td>
+									<td>16:39:29 p. m.</td>
+									<td class='linked' test-id='18'>
+										Validar que al ingresar a un producto su ficha es la correcta
+										<div class="">
+											<span class="badge badge-default">Prueba Demo Blaze N.1</span>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</li>
+				<li class="test-item">
+					<div class="open-test">
+						<div class="test-detail">
+							<p class="name">@DemoBlaze5_1</p>
+							<p class="duration text-sm">1 features</p>
+							<span class="datetime">
+							<span class='badge badge-success'>1</span>
+							
+							
+							
+							</span>
+						</div>
+					</div>
+					<div class="test-contents d-none">
+						<div class="info">
+							<h4>@DemoBlaze5_1</h4>
+							<span status="pass" class='badge badge-success'>1 passed</span>
+							
+							
+							
+						</div>
+						<table class='table table-sm mt-4'>
+							<thead>
+								<tr>
+									<th class="status-col">Status</th>
+									<th class="timestamp-col">Timestamp</th>
+									<th>TestName</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="tag-test-status" status="pass">
+									<td>
+										<div class='status-avatar pass-bg'>
+											<i class="fa fa-check text-white"></i>
+										</div>
+									</td>
+									<td>16:39:29 p. m.</td>
+									<td class='linked' test-id='18'>
+										Validar que al ingresar a un producto su ficha es la correcta
+										<div class="">
+											<span class="badge badge-default">Prueba Demo Blaze N.1</span>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="test-content scrollable">
+		<div class="test-content-tools">
+			<ul>
+				<li>
+					<a class="back-to-test" href="javascript:void(0)">
+					<i class="fa fa-arrow-left"></i>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="test-content-detail">
+			<div class="detail-body"></div>
+		</div>
+	</div>
+</div>                    <!-- dashboard -->
+<div class="container-fluid p-4 dashboard-view">
+	<div class="row">
+		<div class="col-sm-12 col-md-4">
+			<div class="card">
+				<div class="card-header">
+					<h6 class="card-title">Features</h6>
+				</div>
+				<div class="card-body">
+					<div class="">
+						<canvas id='parent-analysis' width='115' height='90'></canvas>
+					</div>
+				</div>
+				<div class="card-footer">
+					<div><small data-tooltip='100%'>
+						<b>2</b> features passed
+						</small>
+					</div>
+					<div>
+						<small data-tooltip='0%'><b>0</b> features failed, 
+						<b>0</b> skipped, <b data-tooltip='0%'>0</b> others
+						</small>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-12 col-md-4">
+			<div class="card">
+				<div class="card-header">
+					<h6 class="card-title">Scenarios</h6>
+				</div>
+				<div class="card-body">
+					<div class="">
+						<canvas id='child-analysis' width='115' height='90'></canvas>
+					</div>
+				</div>
+				<div class="card-footer">
+					<div><small data-tooltip='100%'><b>16</b> scenarios passed</small></div>
+					<div>
+						<small data-tooltip='0%'><b>0</b> scenarios failed, 
+						<b>0</b> skipped, <b data-tooltip='0%'>0</b> others
+						</small>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-12 col-md-4">
+			<div class="card">
+				<div class="card-header">
+					<h6 class="card-title">Log events</h6>
+				</div>
+				<div class="card-body">
+					<div class="">
+						<canvas id='events-analysis' width='115' height='90'></canvas>
+					</div>
+				</div>
+				<div class="card-footer">
+					<div><small data-tooltip='100%'><b>60</b> events passed</small></div>
+					<div>
+						<small data-tooltip='0%'><b>0</b> events failed, 
+						<b data-tooltip='0%'>0</b> others
+						</small>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-3">
+			<div class="card">
+				<div class="card-body box-height-150">
+					<div class="media justify-content-between">
+						<div class="card-header">
+							<h6 class="card-title">Features</h6>
+							<h2 class="font-size-28 font-weight-light mt-3">2</h2>
+							<span class="text-semibold text-success font-size-15">
+							<i class="ti-arrow-up font-size-11"></i> 
+							<span>100,00%</span>
+							</span>
+						</div>
+						<div class="align-self-end">
+							<i class="fa fa-align-left font-size-70 opacity-01"></i>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-3">
+			<div class="card">
+				<div class="card-body box-height-150">
+					<div class="media justify-content-between">
+						<div class="card-header">
+							<h6 class="card-title">Scenarios</h6>
+							<h2 class="font-size-28 font-weight-light mt-3">16</h2>
+							<span class="text-semibold text-success font-size-15">
+							<i class="ti-arrow-up font-size-11"></i> 
+							<span>100,00%</span>
+							</span>
+						</div>
+						<div class="align-self-end">
+							<i class="fa fa-align-left font-size-70 opacity-01"></i>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-3">
+			<div class="card">
+				<div class="card-body box-height-150">
+					<div class="media justify-content-between">
+						<div class="card-header">
+							<h6 class="card-title">Start</h6>
+							<h4 class="font-weight-light mt-4">jun 16, 2025 04:39:26 p. m.</h4>
+							<span class="text-semibold text-success font-size-15">
+						</div>
+						<div class="align-self-end">
+							<i class="fa fa-clock-o font-size-70 text-success opacity-01"></i>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-3">
+			<div class="card">
+				<div class="card-body box-height-150">
+					<div class="media justify-content-between">
+						<div class="card-header">
+							<h6 class="card-title">Duration</h6>
+							<h4 class="font-weight-light mt-4">0h 0m 2s+799ms</h4>
+							<span class="text-semibold font-size-15">
+						</div>
+						<div class="align-self-end">
+							<i class="fa fa-clock-o font-size-70 opacity-01"></i>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="card">
+				<div class="card-header">
+					<h6 class="card-title">Timeline</h6>
+				</div>
+				<div class="card-body">
+					<div class="">
+						<canvas id="timeline" height="120"></canvas>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6">
+			<div class="card">
+				<div class="card-header">
+					<h6 class="card-title">Tags</h6>
+				</div>
+				<div class="table-overflow">
+					<table class="table table-sm">
+						<thead>
+							<tr class="bg-gray">
+								<th>Name</th>
+								<th>Passed</th>
+								<th>Failed</th>
+								<th>Others</th>
+								<th>Passed %</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>@featureBBDD</td>
+								<td>8</td>
+								<td>0</td>
+								<td>0</td>
+								<td>
+									100%
+								</td>
+							</tr>
+							<tr>
+								<td>@test1_BBDD</td>
+								<td>3</td>
+								<td>0</td>
+								<td>0</td>
+								<td>
+									100%
+								</td>
+							</tr>
+							<tr>
+								<td>@test2_BBDD</td>
+								<td>4</td>
+								<td>0</td>
+								<td>0</td>
+								<td>
+									100%
+								</td>
+							</tr>
+							<tr>
+								<td>@featurePruebasDemoBlaze</td>
+								<td>10</td>
+								<td>0</td>
+								<td>0</td>
+								<td>
+									100%
+								</td>
+							</tr>
+							<tr>
+								<td>@prueba1DemoBlaze</td>
+								<td>3</td>
+								<td>0</td>
+								<td>0</td>
+								<td>
+									100%
+								</td>
+							</tr>
+							<tr>
+								<td>@DemoBlaze1_1</td>
+								<td>1</td>
+								<td>0</td>
+								<td>0</td>
+								<td>
+									100%
+								</td>
+							</tr>
+							<tr>
+								<td>@DemoBlaze1_2</td>
+								<td>1</td>
+								<td>0</td>
+								<td>0</td>
+								<td>
+									100%
+								</td>
+							</tr>
+							<tr>
+								<td>@DemoBlaze1_3</td>
+								<td>1</td>
+								<td>0</td>
+								<td>0</td>
+								<td>
+									100%
+								</td>
+							</tr>
+							<tr>
+								<td>@prueba1DemoBlaze_2</td>
+								<td>3</td>
+								<td>0</td>
+								<td>0</td>
+								<td>
+									100%
+								</td>
+							</tr>
+							<tr>
+								<td>@DemoBlaze2_1</td>
+								<td>1</td>
+								<td>0</td>
+								<td>0</td>
+								<td>
+									100%
+								</td>
+							</tr>
+							<tr>
+								<td>@DemoBlaze2_2</td>
+								<td>1</td>
+								<td>0</td>
+								<td>0</td>
+								<td>
+									100%
+								</td>
+							</tr>
+							<tr>
+								<td>@DemoBlaze2_3</td>
+								<td>1</td>
+								<td>0</td>
+								<td>0</td>
+								<td>
+									100%
+								</td>
+							</tr>
+							<tr>
+								<td>@prueba1DemoBlaze_3</td>
+								<td>1</td>
+								<td>0</td>
+								<td>0</td>
+								<td>
+									100%
+								</td>
+							</tr>
+							<tr>
+								<td>@DemoBlaze3_1</td>
+								<td>1</td>
+								<td>0</td>
+								<td>0</td>
+								<td>
+									100%
+								</td>
+							</tr>
+							<tr>
+								<td>@prueba1DemoBlaze_4</td>
+								<td>1</td>
+								<td>0</td>
+								<td>0</td>
+								<td>
+									100%
+								</td>
+							</tr>
+							<tr>
+								<td>@DemoBlaze4_1</td>
+								<td>1</td>
+								<td>0</td>
+								<td>0</td>
+								<td>
+									100%
+								</td>
+							</tr>
+							<tr>
+								<td>@prueba1DemoBlaze_5</td>
+								<td>1</td>
+								<td>0</td>
+								<td>0</td>
+								<td>
+									100%
+								</td>
+							</tr>
+							<tr>
+								<td>@DemoBlaze5_1</td>
+								<td>1</td>
+								<td>0</td>
+								<td>0</td>
+								<td>
+									100%
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="card">
+				<div class="card-header">
+					<h6 class="card-title">Environment</h6>
+				</div>
+				<div class="table-overflow">
+					<table class="table table-sm">
+						<thead>
+							<tr class="bg-gray">
+								<th>Name</th>
+								<th>Value</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Ingeniero : </td>
+								<td>Cesar A. Narvaez M.</td>
+							</tr>
+							<tr>
+								<td>OS : </td>
+								<td>Windows 11</td>
+							</tr>
+							<tr>
+								<td>OS Architecture : </td>
+								<td>amd64</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+	var statusGroup = {
+	    parentCount: 2,
+		passParent: 2,
+		failParent: 0,
+		fatalParent: 0,
+		errorParent: 0,
+		warningParent: 0,
+		skipParent: 0,
+		exceptionsParent: 0,
+		childCount: 16,
+		passChild: 16,
+		failChild: 0,
+		fatalChild: 0,
+		errorChild: 0,
+		warningChild: 0,
+		skipChild: 0,
+		infoChild: 0,
+		debugChild: 0,
+		exceptionsChild: 0,
+		grandChildCount: 0,
+		passGrandChild: 0,
+		failGrandChild: 0,
+		fatalGrandChild: 0,
+		errorGrandChild: 0,
+		warningGrandChild: 0,
+		skipGrandChild: 0,
+		infoGrandChild: 0,
+		debugGrandChild: 0,
+		exceptionsGrandChild: 0,
+		eventsCount: 60,
+		passEvents: 60,
+		failEvents: 0,
+		fatalEvents: 0,
+		errorEvents: 0,
+		warningEvents: 0,
+		skipEvents: 0,
+		infoEvents: 0,
+		debugEvents: 0,
+		exceptionsEvents: 0
+	};
+</script>
+<script>
+	var timeline = {
+	        "Pruebas con BBDD":0.001,"Prueba Demo Blaze N.1":2.554
+	};
+</script>
+                </div>
+            </div>
+        </div>
+    </div>
+        <script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/spark/js/spark-script.js"></script>
+</body>
+</html>
