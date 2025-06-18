@@ -9,13 +9,18 @@ import java.io.IOException;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        plugin = {"pretty", "html:target/cucumber-report.html"},
+      //  plugin = {"pretty", "html:target/cucumber-report.html"},
         features = "src/test/resources/features",
-        glue = "definitions"
+        glue = "definitions",
         //tags = "@featurePruebasDemoBlaze"
         //publish = true
        // plugin = {"json:src/test/resources/cucumber.json","html:src/test/resources/reportes/cucumber_report.html"}
-
+        plugin = {
+                "pretty",
+                "html:target/cucumber-report.html",
+                "json:target/cucumber-report.json",
+                "junit:target/cucumber-reports/CucumberTestReport.xml"
+        }
 )
 public class RunCucumber {
 
