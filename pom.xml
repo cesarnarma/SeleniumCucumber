@@ -126,9 +126,9 @@
             <artifactId>maven-surefire-plugin</artifactId>
             <version>3.2.5</version>
             <configuration>
-                <includes>
-                    <include>**/RunCucumber.java</include>
-                </includes>
+                <systemPropertyVariables>
+                    <cucumber.plugin>junit:target/cucumber-reports/CucumberTestReport.xml</cucumber.plugin>
+                </systemPropertyVariables>
             </configuration>
         </plugin>
     </plugins>
