@@ -12,7 +12,7 @@ import java.io.IOException;
       //  plugin = {"pretty", "html:target/cucumber-report.html"},
         features = "src/test/resources/features",
         glue = "definitions",
-        //tags = "@featurePruebasDemoBlaze"
+        tags = "@featurePruebasDemoBlaze",
         //publish = true
        // plugin = {"json:src/test/resources/cucumber.json","html:src/test/resources/reportes/cucumber_report.html"}
         plugin = {

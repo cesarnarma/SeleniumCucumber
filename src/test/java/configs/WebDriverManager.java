@@ -39,9 +39,9 @@ public class WebDriverManager
            // options.addArguments("--disable-web-security");
             //options.addArguments("start-fullscreen");
 
-            //io.github.bonigarcia.wdm.WebDriverManager.chromedriver().setup();
-           // driver =  new ChromeDriver(options);
-            driver = new FirefoxDriver();
+            io.github.bonigarcia.wdm.WebDriverManager.chromedriver().setup();
+            driver =  new ChromeDriver(options);
+          //  driver = new FirefoxDriver();
 
             /*}
             else if(BROWSER.equals("MOZILLA"))
