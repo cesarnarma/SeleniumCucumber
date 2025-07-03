@@ -17,8 +17,8 @@ import java.io.IOException;
        // plugin = {"json:src/test/resources/cucumber.json","html:src/test/resources/reportes/cucumber_report.html"}
         plugin = {
                 "pretty",
-                "html:target/cucumber-report.html",
-                "json:target/cucumber-report.json",
+                "html:target/cucumber-reports/cucumber-report.html",
+                "json:target/cucumber-reports/cucumber-report.json",
                 "junit:target/cucumber-reports/CucumberTestReport.xml"
         }
 )
