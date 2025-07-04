@@ -1,54 +1,28 @@
 pipeline {
-    agent any
-
-    tools {
-        maven 'Maven' // version como aparece en tools de Jenkins
-        jdk 'Java_JDK' // version como aparece en tools de Jenkins
-    }
+    agent any                      // usa cualquier agente disponible
 
     environment {
-        MAVEN_OPTS = "-Dmaven.test.failure.ignore=false"
-    }
-
-    parameters {
-        string(name: 'TAGS', defaultValue: '@regresion', description: 'Cucumber Tags a ejecutar (por ejemplo: @login or @regresion and not @wip)')
+        MAVEN_HOME = tool 'Maven'  // nombre exacto del Maven instalado en Jenkins
+        PATH = "${MAVEN_HOME}/bin:${env.PATH}"
     }
 
     stages {
-        stage('Clonar código') {
+        stage('Checkout') {        // Jenkins hace checkout por defecto, pero lo dejamos explícito
             steps {
-                git branch: 'main', url: 'https://github.com/cesarnarma/SeleniumCucumber.git'
+                checkout scm
             }
         }
 
-        stage('Compilar y ejecutar pruebas') {
+        stage('Build & Test') {    // compila y ejecuta los escenarios Cucumber
             steps {
-                sh "mvn clean test -Dcucumber.filter.tags='${params.TAGS}'"
-            }
-        }
-
-        stage('Publicar Reportes') {
-            steps {
-                publishHTML(target: [
-                    allowMissing: false,
-                    alwaysLinkToLastBuild: true,
-                    keepAll: true,
-                    reportDir: 'target',
-                    reportFiles: 'cucumber-report.html',
-                    reportName: 'Cucumber Report'
-                ])
+                bat 'mvn -B clean test'   // usa bat porque tu agente es Windows
             }
         }
     }
 
-    post {
+    post {                         // siempre publica resultados JUnit
         always {
             junit 'target/surefire-reports/*.xml'
-            archiveArtifacts artifacts: 'target/*.html', allowEmptyArchive: true
-        }
-        failure {
-            echo 'La ejecución falló. Revisar logs.'
         }
     }
 }
-
